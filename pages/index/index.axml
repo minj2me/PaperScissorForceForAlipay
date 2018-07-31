@@ -1,0 +1,16 @@
+
+<view class="bg_fixd">
+  <view class="line_bg">
+    <image src="../../images/home-1.png" mode="widthFix" />
+  </view>
+  <view class="middle_bg">
+    <image src="../../images/home-2.png" mode="widthFix" />
+  </view>
+  <view class="start_btn">
+    <image src="../../images/home-3.png" mode="widthFix" 
+    class="line_bg" onTap="start" />
+  </view>
+  <!-- 底部tab -->
+  <import src="/components/tabBottom/tabBottom.axml"/>
+  <template is="tabBottom" data='{{...tabData}}'/>
+</view>

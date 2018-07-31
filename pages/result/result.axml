@@ -1,0 +1,132 @@
+<view class="user_info">
+  <view class="line_box">
+    <view class="line_item"></view>
+    <view class="line_item"></view>
+    <view class="line_item"></view>
+  </view>
+  <view class="user_box">
+    <view class="user_content">
+      <view class="flex_box">
+        <view class="user_img">
+          <image src="{{avatar}}" mode="scaleToFill" />
+        </view>
+        <view class="user_name">
+          <view class="name_bg">
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='scaleToFill' />
+            <view class="name_text">
+              <text>{{nickName}}</text>
+              <image src="../../images/man-icon.png" mdoe='aspectFit' a:if='{{gender==1 ||gender==0}}' />
+              <image src="../../images/woman-icon.png" mdoe='aspectFit' a:if='{{gender==2}}' />
+            </view>
+          </view>
+          <view class="name_bg star_num" animation="{{animationInfo}}">
+            <image src="../../images/star-icon.png" class="star_img" mdoe='aspectFit' />
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='aspectFit'   />
+            <view class="name_text">{{stars}}</view>
+          </view>
+        </view>
+        <view class="user_btn">
+          <image src="../../images/exchange_item_bg.png" />
+          <view class="win_lose">
+            <view class="icon">
+              <image src="../../images/win-icon.png" mode="scaleToFill" a:if='{{result>=1}}'/>
+              <image src="../../images/lose-icon.png" mode="scaleToFill" a:else/>
+            </view>
+            <view class="count_star">
+              <text a:if='{{result>=1}}'>＋</text>
+              <text a:else>－</text>
+              <image src="../../images/star-icon.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 获胜奖品 -->
+<view class="arrow_box" a:if="{{result==1}}">
+  <view class="prize_name">
+    <view>获胜奖品:</view>
+    <view class="name_text">{{prizeName}}</view>
+  </view>
+  <view class="prize_img">
+    <image src="{{prizeUrl}}" mode='aspectFit'/>
+    <view class="btn">立刻使用</view>
+  </view>
+</view>
+<view class="scoreboard">
+  <view class="scoreboard_title">
+    <view class="titile_bg"></view>
+    <view class="title_name">KANS 韩束 ｜ 积分榜</view>
+  </view>
+  <view class="scoreboard_content">
+    <view class="integral">{{scoreStr}}</view>
+    <view>韩束抢积分活动，积分越多奖励越多</view>
+    <view class="user_list">
+      <view class="user_item" a:for='{{rankingArr}}'>
+        <view class="user_head">
+          <!-- 头像 -->
+          <image src="{{item.avatar}}" mode="scaleToFill" />
+          <view class="ranking">
+            <image src="../../images/star-icon.png" mode="scaleToFill" />
+            <text>{{index+1}}</text>
+          </view>
+        </view>
+        <view class="score">{{item.stars}}分</view>
+      </view>
+      <!-- 最后一个 -->
+      <view class="user_item last_item">
+        <view class="user_head">
+          <image src="{{avatar}}" mode="scaleToFill" />
+        </view>
+        <view class="skip" onTap="skip">点击查看排行榜</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 按钮 -->
+<view class="button_box">
+  <view class="button_item" onTap="challenge">
+    <image src="../../images/btn-bg-1.png" mode="scaleToFill" />
+    <view class="btn_text">继续挑战</view>
+  </view>
+  <view class="button_item" onTap="toHomePage">
+    <image src="../../images/btn-bg-2.png" mode="scaleToFill" />
+    <view class="btn_text">返回首页</view>
+  </view>
+  <view class="button_item">
+    <image src="../../images/btn-bg-2.png" mode="scaleToFill" />
+    <view class="btn_text">
+      <button class="play_btn_bg" open-type="share" plain='true' type="default">分享战绩</button>
+    </view>
+  </view>
+</view>
+<!-- 游戏回顾 -->
+<view class="game_review" animation="{{aniData}}">
+  <view class="game_top" onTap="examine">
+    <view class="game_btn" a:if='{{isExamine}}'>
+      <view class="game_btn_bg">游戏回顾</view>
+    </view>
+    <view class="games_title" a:if='{{!isExamine}}'>{{gameResultStr}}</view>
+    <image src="../../images/arrows-icon.png" mode="scaleToFill" class="arrows" />
+  </view>
+  <view class="game_detail">
+    <scroll-view scroll-x="{{true}}">
+
+      <view class="user_first" a:for='{{gameResult}}'>
+        <view class="head">
+          <image src="{{item.user.avatar}}" mode="scaleToFill" />
+        </view>
+        <view class="card" a:for='{{item.recordList}}' a:for-item='rl'>
+          <view class="card_item" a:for='{{rl}}' a:for-item='k' a:for-index='j'>
+            <image src="../../images/value1p.png" mode="scaleToFill" a:if='{{k.init==1}}' />
+            <image src="../../images/value2p.png" mode="scaleToFill" a:elif='{{k.init==2}}' />
+            <image src="../../images/value3p.png" mode="scaleToFill" a:else />
+            <view class="card_idx">{{k.confirm}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tip">Tips：数字为出牌的顺序</view>
+</view>

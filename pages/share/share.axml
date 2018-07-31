@@ -1,0 +1,32 @@
+<import src="/components/head/head.axml"/>
+
+<view class="userTop">
+ <view class="line_item"/>
+      <view class="line_item2"/>
+      <view class="line_item3"/>
+<template is="user-head" data="{{...imPlayer}}"/>
+</view>
+
+  <image 
+  class="centerTitle" 
+  src='../../images/{{showMatchFinish?"friend_joined":"waitting_friend_join"}}.png' 
+  mode="aspectFit"/>
+
+<view class="line_item4" hidden="{{showMatchFinish?true:false}}"/>
+<view class="line_item5" hidden="{{showMatchFinish?true:false}}"/>
+<view class="line_item6" hidden="{{showMatchFinish?true:false}}"/>
+
+<image 
+  class="cancelButton" 
+  onTap="cancel"
+  hidden="{{showMatchFinish?true:false}}"
+  src='../../images/btn_cancel.png' 
+  />
+
+  <view class="userBottom" hidden="{{showMatchFinish?false:true}}">
+  <template is="user-head" data="{{...otherPlayer}}"/>
+  </view> 
+<image src="../../images/bg-icon-1.png" mode="scaleToFill" class="bg_icon" />
+   <image src="../../images/bg-icon-2.png" mode="scaleToFill" class="bg_icon_two" />
+    <image src="../../images/bg-icon-3.png" mode="scaleToFill" class="bg_icon_three" />
+  

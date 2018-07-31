@@ -1,0 +1,104 @@
+@import "/components/head/head.acss";
+
+page{
+  background-color: #ff7190;
+}
+
+.userTop {
+    text-align: center;
+    width:100%;
+   position: absolute; /*or前面的是absolute就可以用*/  
+top: 40rpx;  
+  display: flex;
+}
+
+ .line_item{
+  position: absolute;
+  top: 55rpx;  
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+.line_item2{
+  position: absolute;
+  top: 73rpx;  
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+.line_item3{
+  position: absolute;
+  top: 91rpx;  
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+
+.centerTitle{
+  width: 400rpx;
+  position: absolute;
+  left: 50%;/*配合margin-left的负值实现水平居中*/ 
+  margin-left: -200rpx;/*值的大小等于元素宽度的一半*/
+  top:25%;/*配合margin-top的负值实现垂直居中*/ 
+}
+
+.userBottom {
+    text-align: center;
+    width:100%;
+   position: absolute; /*or前面的是absolute就可以用*/  
+       bottom: 40rpx;  
+  display: flex;
+}
+
+.bg_icon{
+  width: 202rpx;
+  height: 84rpx;
+  position: absolute;
+  right: 0;
+  top: 160rpx;
+}
+.bg_icon_two{
+  width: 152rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 440rpx;
+}
+.bg_icon_three{
+  width: 153rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom: 180rpx;
+}
+
+  .line_item4{
+  position: absolute;
+  bottom: 355rpx; 
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+  .line_item5{
+  position: absolute;
+  bottom: 337rpx; 
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+  .line_item6{
+  position: absolute;
+  bottom: 319rpx; 
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+}
+
+.cancelButton{
+    position: absolute; /*or前面的是absolute就可以用*/  
+       bottom: 255rpx;  
+  display: flex;
+  width: 184rpx;
+  height: 184rpx;
+   left: 50%;/*配合margin-left的负值实现水平居中*/ 
+  margin-left: -92rpx;/*值的大小等于元素宽度的一半*/
+}

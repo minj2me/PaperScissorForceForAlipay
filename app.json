@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/starFight/starFight",
+    "pages/starFightOneCard/starFightOneCard",
+    "pages/turntable/turntable",
+    "pages/sign/sign",
+    "pages/ranking/ranking",
+    "pages/personal/personal",
+    "pages/gameMatching/gameMatching",
+    "pages/options/options",
+    "pages/result/result",
+    "pages/exchange/exchange",
+    "pages/fightTillTheEndOption/fightTillTheEndOption",
+    "pages/share/share"
+  ],
+  "window": {
+    "defaultTitle": "束战束决",
+    "titleBarColor":"#ff7190"
+  }
+  
+}

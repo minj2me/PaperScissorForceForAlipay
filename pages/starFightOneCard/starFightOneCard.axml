@@ -1,0 +1,129 @@
+
+<import src="/components/head/head.axml"/>
+
+
+<view class="timeCountDown" style="top:{{timeCountDownY}}rpx;left:{{timeCountDownX}}rpx">
+   <text class="timeCountDownText" a:if={{countDownTime<10}}>选择出牌顺序 00:0{{countDownTime}}</text>
+  <text class="timeCountDownText" a:else>选择出牌顺序 00:{{countDownTime}}</text>
+</view>
+
+<template is="user-head" data="{{...player}}"/>
+
+<!--对手的选牌区-->
+<view a:for="{{cardListOrderUser}}" style="display:inline-block">
+
+      <!--虚线框-->
+    <image 
+    id="order_user_card_bg"
+    style="position:absolute;top:{{item.y-2}}rpx;left:{{item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;"
+     src='../../images/card_dot.png'/>
+
+<!--对手的可选的牌-->
+    <!--<view hidden="{{item.matched?true:false}}">-->
+    <view hidden="{{(item.put || item.matched)?true:false}}">
+  <image
+  style="position:absolute;top:{{item.y==''?0:item.y}}rpx;left:{{item.x==''?0:item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;"
+  src='{{item.poster}}'/>
+  </view>
+
+  <!--对手的牌对比后粉色的bg-->
+ <view id="other_matched_view" 
+      hidden="{{item.matched?false:true}}" 
+      style="border-radius:10px;background-color:#ff7190;position:absolute;top:{{item.y}}rpx;left:{{item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;">
+      </view>
+<!--对手的牌对比后的结果图-->
+       <image 
+      style="position:absolute;top:{{item.y+15}}rpx;left:{{item.x+1}}rpx;width:130rpx;height:130rpx;"
+      src='{{item.bg}}'
+      />
+ <!--对方的出牌顺序的数-->
+      <view 
+      style="position:absolute;top:{{item.y==''?0:(item.y-25)}}rpx;left:{{item.x==''?0:(item.x+42)}}rpx;" 
+      hidden="{{item.matched?false:true}}"
+       class="putIndexText">{{item.putIndex}}</view>
+
+ </view>
+</view>
+<!--排序中 or 已确认-->
+<image class="confirmTitle" src='../../images/{{orderPlayerConfirmed?"confirmed":"ordering"}}.png'/>
+
+<!--对手开牌的结果
+<view class="resultOrderPlayerCardParent">
+<view a:for="{{taSelectedCards}}" animation="{{cardAnimationInfo}}" style="display:inline-block;" hidden="{{orderPlayerConfirmed?false:true}}">
+  <image 
+  class="resultOrderPlayerCard" src='{{item.url}}'/>
+</view>
+</view>-->
+
+<!--对方选择的牌放的位置-->
+<view a:for="{{borderListOrderUser}}" style="display:inline-block">
+<view 
+  hidden="{{item.afterAnimation?true:false}}"
+  animation="{{cardAnimationInfo}}" 
+  style="position:absolute;top:{{item.y}}rpx;left:{{item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;">
+  <image 
+    style="position:absolute;width:{{item.width}}rpx;height:{{item.height}}rpx;"
+   src='{{item.url}}' 
+   data-value="{{item.value}}"/>
+</view>
+<!--用于动画转动后显示，动画复原后隐藏-->
+  <view hidden="{{item.afterAnimation?false:true}}">
+  <image 
+    id="imageShowAfterAnimation"
+      style="position:absolute;top:{{item.y}}rpx;left:{{item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;"
+    src='{{item.url}}' 
+    />
+  </view>
+  
+</view>
+<!--<text>VS</text>-->
+<image class="vs" src="../../images/vs.png"/>
+<!--我选择的牌放的位置-->
+<view a:for="{{borderList}}" style="display:inline-block">
+  <image style="position:absolute;top:{{item.y-3}}rpx;left:{{item.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;" src="../../images/card_dot.png" data-value="{{item.value}}"/>
+  <!--我的选牌区-->
+  <view style="text-align:center">
+    <view a:for="{{cardList}}" style="display:inline-block">
+      <view id="matched_view" 
+      hidden="{{item.matched?false:true}}" 
+      style="border-radius:10px;background-color:#ff7190;position:absolute;top:{{item.y==''?0:item.oy}}rpx;left:{{item.x==''?0:item.ox}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;"/>
+      <!--卡牌bg-->
+      <image id="card_bg" style="position:absolute;top:{{item.oy+15}}rpx;left:{{item.ox}}rpx;width:130rpx;height:130rpx;" src='{{item.bg==""?"../../images/card_dot.png":item.bg}}'/>
+      <!--卡牌，比赛过的要隐藏，让卡牌bg显示对战结果-->
+      <view hidden="{{item.matched?true:false}}">
+      <image 
+      style="position:absolute;top:{{item.touched?item.y-23:item.y}}rpx;left:{{item.put?item.x:(item.touched?item.x-28:item.x)}}rpx;width:{{(item.put||item.touched)?190:item.width}}rpx;height:{{(item.put||item.touched)?258:item.height}}rpx;"
+      id = "{{item.index}}" 
+      onTouchStart="moveStart" 
+      onTouchMove="moveCard" 
+      onTouchEnd="moveEnd" 
+      src="{{(item.put||item.touched)?item.posterBig:item.poster}}"
+      data-value="{{item.value}}"/>
+      </view>
+      <!--我的出牌顺序的数-->
+      <view 
+      style="position:absolute;top:{{item.y==''?0:(item.y-25)}}rpx;left:{{item.x==''?0:(item.x+42)}}rpx;" 
+      hidden="{{item.matched?false:true}}"
+       class="putIndexText">{{item.putIndex}}</view>
+    </view>
+    <!--显示双方对战结果-->
+    <view class="resultLists">
+      <view a:for="{{resultLists}}" style="display:inline-block">
+        <view hidden="{{showTaCard?false:true}}">
+          <image class="result" src='../../images/{{item}}'/>
+        </view>
+      </view>
+    </view>
+    <!--确认按钮-->
+    <image onTap="confirmCard" class="confirmButton" src='../../images/{{iSendedCard?"send":"send_before"}}.png'/>
+  </view>
+  <view class="userBottom">
+    <template is="user-head" data="{{...me}}"/>
+  </view>
+  <!--放该局的对战记录-->
+  <view class="resultRecordList">
+    <view a:for="{{resultRecordLists}}" style="display:inline-block">
+      <text class="resultRecordText" style="position:absolute;left:{{item.x}}rpx;">{{item.currentStage}}</text>
+      <image class="resultRecord" src="../../images/{{item.bg}}"/>
+    </view>
+  </view>

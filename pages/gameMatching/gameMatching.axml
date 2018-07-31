@@ -1,0 +1,15 @@
+<import src="/components/head/head.axml"/>
+<view class="userTop" hidden="{{showMatchFinish?false:true}}">
+<template is="user-head" data="{{...otherPlayer}}"/>
+</view>
+
+  <image 
+  class="centerTitle" 
+  src='../../images/game_{{showMatchFinish?"match_finish":"matching"}}.png' 
+  mode="aspectFit"/>
+
+  <view class="userBottom">
+    <!--<image class="avatar" src="{{imPlayer.avatar}}"></image>
+    <view class="nickname">{{imPlayer.nickName}}</view>-->
+    <template is="user-head" data="{{...imPlayer}}"/>
+  </view> 

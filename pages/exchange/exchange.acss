@@ -1,0 +1,330 @@
+@import '../../components/head/head.acss';
+
+page{
+    width: 100%;
+    height: 100%;
+    background-color: #ff7190;
+    padding-top: 100rpx;
+    padding-bottom:20rpx;
+}
+
+/* 头像样式 */
+.user_info{
+    position: relative;
+    height: 142rpx;
+    line-height: 142rpx;
+    width: 100%;
+}
+.user_info .line_box{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+.user_info .line_item{
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+    margin-bottom: 10rpx;
+}
+.user_info .line_item:last-child{
+    margin-bottom: 0;
+}
+
+.user_info .user_box{
+   position: relative;
+    width: 460rpx;
+    height: 142rpx;
+    border-radius: 30px;
+    background-clip: padding-box;
+    text-align: center;
+    color: #F57259;
+    margin: 0 auto;
+    background: linear-gradient(to right, #ff97ff,blue);
+}
+
+.user_info .user_box .user_content {
+    position: absolute;
+    width: 450rpx;
+    height: 132rpx;
+    top: 5rpx; bottom: 5rpx;
+    left: 5rpx; right: 5rpx;
+    /* background: linear-gradient(to right, #FA2D60, #EFCF5B); */
+   background: linear-gradient(to right, #ff7190,#ffd252);
+    /* content: ''; */
+    /* z-index: -1; */
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+.user_img{
+    width: 142rpx;
+    height: 142rpx;
+    border-radius: 50%;
+    background: linear-gradient(to right, #bce2ea,#7762ef);
+    transform: translate(-20%,0);
+    margin-top: -3rpx;
+}
+.user_img image{
+    margin-top: 12rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+.user_name {
+    width: 50%;
+    /* transform: translate(-56rpx,0); */
+  }
+.user_name image{
+  width:27rpx;
+  height: 37rpx;
+}
+.user_name .name_bg{
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  position: relative;
+  margin-top: 5rpx;
+}
+.name_bg .middle_img{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.name_bg .name_text{
+  color: #383838;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50% ,0);
+  font-size:25rpx; 
+  width: 80%;
+  align-items: center;
+  display: flex;
+}
+.name_text image{
+  width: 25rpx;
+  height: 25rpx;
+  vertical-align: initial;
+  margin-left: 10rpx;
+}
+.name_text text{
+  display: inline-block;
+  width: 100rpx;
+  overflow: hidden;
+}
+.user_name .star_num{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+   margin-top: 3rpx;
+   margin-left: 25rpx;
+}
+.user_name .star_num .middle_img{
+  left: 50rpx;
+}
+.user_name .star_num .name_text{
+  margin-left: 50rpx;
+}
+.user_name .star_img{
+  position: absolute;
+  width: 35rpx;
+  height: 37rpx;
+  left: 10rpx;
+  top: 10rpx;
+}
+
+.debris_bg{
+    width: 700rpx;
+    background-color: #f9cc3d;
+    margin: 40rpx auto 0;
+    border-radius: 30rpx;
+    box-shadow: 1px 0px 6px rgba(204, 62, 86, 0.75);
+    text-align: center;
+    padding-bottom: 80rpx;
+}
+
+.break_bg{
+    width: 60rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background-color: #ff7190;
+    /* box-shadow: 1px 0px 6px rgba(204, 62, 86, 0.75); */
+    margin: 0 auto ;
+    transform: translate(0,-50%);
+}
+
+.item{
+    position: relative;
+    height:210rpx;
+    padding:10rpx 20rpx 10rpx 50rpx ;
+      /*上内边距是 10px
+右内边距是 10px
+下内边距是 10px
+左内边距是 10px*/
+}
+
+.itemBg2{
+      /*itemBg2的子布局居中布局,使用*/
+      padding:10rpx 10rpx 10rpx 5rpx ;
+      /*上内边距是 10px
+右内边距是 10px
+下内边距是 10px
+左内边距是 10px*/
+
+    display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+    border-radius:10px;
+    height:140rpx;
+   background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#3940ef), to(#cc59ef))
+}
+
+.itemBg{
+    -webkit-flex: none;
+          flex: none;
+    width:100%;
+    border-radius:10px;
+    height:150rpx;
+    background:#ffffff;
+}
+
+.starBg{
+    position: absolute;
+    left:0rpx;
+    top:-12rpx;
+    width:210rpx;
+  height: 210rpx;
+}
+
+.smallStarImg{
+ width:72rpx;
+    height:72rpx;
+    left:64rpx;
+    top:30rpx;
+    position: absolute;
+}
+
+.starCount{
+    font-size:43rpx;
+    left:65rpx;
+    top:105rpx;
+    position: absolute;
+    color:#ff7190;
+    -webkit-transform: rotate(350deg);
+-moz-transform: rotate(350deg);
+-o-transform: rotate(350deg);
+writing-mode: lr-tb;
+}
+
+.productPhoto{
+    position: absolute;
+    left:190rpx;
+    top:20rpx;
+    width:135rpx;
+  height: 135rpx;
+}
+
+
+.btnExchangeImg{
+    width:120rpx;
+    height:72rpx;
+      right:0rpx;
+    top:0rpx;
+      display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+
+.btnExchangeBg{
+     display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+    right:33rpx;
+    top:55rpx;
+    width:120rpx;
+    height:72rpx;
+    position: absolute;
+}
+
+.priceItemOut{
+      display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+    width:79rpx;
+    height:79rpx;
+     left:280rpx;
+    top:30rpx;
+  position: absolute;
+  background:#d63856;
+  border-radius:50px;
+}
+
+.priceItem{
+       display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+     font-size:23rpx;
+    color:#ffffff;
+    width:71rpx;
+    height:71rpx;
+  background:#ff7190;
+  border-radius:50px;
+}
+
+.exchangeText{
+       display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+     font-size:29rpx;
+    color:#ffffff;
+    width:70rpx;
+    height:40rpx;
+right:28rpx;
+top:12.5rpx;
+  position: absolute;
+  text-align:center;
+}
+
+.line-clamp-2 {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+ .nameText{
+    left:365rpx;
+    top:42rpx;
+    width:175rpx;
+    font-size:38rpx;
+    color:#ff7190;
+    position: absolute;
+    overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

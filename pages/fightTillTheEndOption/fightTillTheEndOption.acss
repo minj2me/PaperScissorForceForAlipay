@@ -1,0 +1,124 @@
+
+@import "/components/head/head.acss";
+
+page{
+  /* background-color: #ff7190; */
+}
+
+.fixd_bg{
+   padding-top: 121rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ff7190 , #f95d77);
+}
+
+.centerView{
+    display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+            background-repeat:no-repeat; 
+}
+.play_box :last-child{
+  margin-top: 40rpx;
+  
+}
+.play_btn{
+  width: 680rpx;
+  height: 163rpx;
+}
+
+/* 按钮样式 */
+.play_box{
+   width: 680rpx;/*rate = 0.44*/
+  height: 299rpx;
+  position: relative;
+  margin-top: 50rpx;
+  text-align: center;
+   display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+            background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-image: url('../../images/fightTillTheEnd_three_card.png');
+}
+.play_box_2{
+   width: 680rpx;/*rate = 0.44*/
+  height: 299rpx;
+   display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  position: relative;
+  margin-top: 180rpx;/*50rpx;*/
+  text-align: center;
+    background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-image: url('../../images/fightTillTheEnd_sigle_card.png');
+}
+
+.play_btn_bg_one_card{
+  opacity:0;
+  width: 680rpx;/*rate = 0.44*/
+  height: 299rpx;
+}
+.play_btn_bg_three_card{
+  width: 680rpx;
+  height: 299rpx;
+  opacity:0;
+}
+.bg_icon{
+  width: 202rpx;
+  height: 84rpx;
+  position: absolute;
+  right: 0;
+  margin-top: -400rpx;
+}
+.bg_icon_two{
+  width: 152rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom:80rpx;
+}
+.bg_icon_three{
+  width: 153rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom:60rpx;
+}
+.advertising_space{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

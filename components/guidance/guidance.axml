@@ -1,0 +1,33 @@
+  
+<view class="guidance_shade" a:if='{{isShow}}'>
+  <view class="guidance_box">
+    <!-- 标题 -->
+    <view class="user_info">
+      <view class="line_box">
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+      </view>
+      <view class="user_box">
+        <view class="user_content">        演示动画      </view>
+      </view>
+    </view>
+    <!-- 图 -->
+    <view class="img_one">
+      <image src="../../images/guide-1.png"  />
+    </view>
+    <view class="img_two">
+      <view class="two_left">
+        <image src="../../images/guide-2.png" class="tow_img_bg"  />
+        <image src="../../images/guide-3.png" class="finger"  />
+        <image src="../../images/guide-3.png" class="finger finger_two"  />
+      </view>
+      <view class="two_right">
+        <image src="../../images/guide-5.png" class="img_btn" />
+        <image src="../../images/guide-4.png" class="img_btn_finger" />
+      </view>
+    </view>
+    <view class="guide_text">移动卡牌到你指定的位置,排列好出牌的顺序,然后按"确认”</view>
+    <view class="btn" onTap="close">知道了（{{time}}s）</view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+  
+<template name="user-head">
+  <view class="user_info_public">
+    <view class="line_box" a:if='{{isLine}}'>
+      <view class="line_item"></view>
+      <view class="line_item"></view>
+      <view class="line_item"></view>
+    </view>
+    <view class="user_box">
+      <view class="user_content">
+        <view class="user_img">
+          <image src="{{avatar}}" mode="scaleToFill" />
+        </view>
+        <view class="user_name">
+          <view class="name_bg">
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='scaleToFill' />
+            <view class="name_text">
+              <text>{{nickName}} </text>                           
+              <image src="../../images/man-icon.png" mdoe='aspectFit' a:if='{{gender==1 || gender==0}}' />
+              <image src="../../images/woman-icon.png" mdoe='aspectFit' a:if='{{gender==2}}' />
+            </view>
+          </view>
+          <view class="name_bg star_num">
+            <image src="../../images/star-icon.png" class="star_img" mdoe='aspectFit' />
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='aspectFit' />
+            <view class="name_text">{{stars}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

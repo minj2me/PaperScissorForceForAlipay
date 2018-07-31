@@ -1,0 +1,34 @@
+.tab_box{
+    box-sizing: border-box;
+    /* border-top: 1PX solid rgb(255, 113, 144); */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    transition: bottom 0.2s;
+    -webkit-box-sizing: border-box;
+    z-index: 100;
+    /* background-color: rgb(255, 113, 144); */
+    position:fixed;
+    bottom: 0;
+    height: 100rpx;
+    background: linear-gradient(to right, #ff7190 , #f95d77);
+    align-items: center;
+}
+.tab_item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 50rpx;
+    height: 50rpx;
+}
+.tab_item image{
+    width: 50rpx;
+    height: 50rpx;
+}
+.Iphone_x{
+    height: 150rpx;
+}

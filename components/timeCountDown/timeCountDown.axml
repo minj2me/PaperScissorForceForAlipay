@@ -1,0 +1,6 @@
+<template name="timeCountDown">
+<view style='display: flex; justify-content: center; text-align: center;'>
+  <text class="time_count_down_front">选择出牌顺序</text>
+  <canvas canvas-id="clock" style="width:30px;height:30px;"/>
+</view>
+</template>

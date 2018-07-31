@@ -1,0 +1,76 @@
+ 
+<!-- 头像节点  -->
+<view class="user_info">
+    <view class="line_box">
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+    </view>
+    <view class="user_box">
+        <view class="user_content">
+            <view class="flex_box">
+                <!-- 头像 -->
+                <view class="user_img">
+                    <image src="{{avatar}}" mode="scaleToFill" />
+                </view>
+                <view class="user_name">
+                    <view class="name_bg">
+                        <image src="../../images/head-bg-1.png" class="middle_img" mdoe='scaleToFill' />
+                        <view class="name_text">
+                            <text>{{nickName}}</text>
+                            <image src="../../images/man-icon.png" mdoe='aspectFit' a:if='{{gender==1 || gender==0}}' />
+                            <image src="../../images/woman-icon.png" mdoe='aspectFit' a:if='{{gender==2}}' />
+                        </view>
+                    </view>
+                    <view class="name_bg star_num">
+                        <image src="../../images/star-icon.png" class="star_img" mdoe='aspectFit' />
+                        <image src="../../images/head-bg-1.png" class="middle_img" mdoe='aspectFit' />
+                        <view class="name_text">{{stars}}                          </view>
+                    </view>
+                </view>
+                <view class="sign_num">
+                    <view class="sign_num_bg">
+                        <image src="../../images/sign-icon.png" mode="aspectFit" />
+                        <view class="num_text">{{9-signInRemain}}/9</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 碎片 -->
+<view class="debris_bg">
+    <view class="break_bg"></view>
+    <view class="debris_title">签到领拼图碎片，韩束大礼包等你来拿！</view>
+    <!-- 奖品图片 -->
+    <view class="prize_bg">
+        <view class="prize_img">
+            <image src="{{prizeUrl}}" mode="scaleToFill" />
+            <view class="prize_shade">
+                <image src="../../images/sign-bg-1.png" mode="scaleToFill" class="shade_1" a:if='{{signInRemain>=9}}' />
+                <image src="../../images/sign-bg-2.png" mode="scaleToFill" class="shade_2" a:if='{{signInRemain>=8}}' />
+                <image src="../../images/sign-bg-3.png" mode="scaleToFill" class="shade_3" a:if='{{signInRemain>=7}}' />
+                <image src="../../images/sign-bg-4.png" mode="scaleToFill" class="shade_4" a:if='{{signInRemain>=6}}' />
+                <image src="../../images/sign-bg-5.png" mode="scaleToFill" class="shade_5" a:if='{{signInRemain>=5}}' />
+                <image src="../../images/sign-bg-6.png" mode="scaleToFill" class="shade_6" a:if='{{signInRemain>=4}}' />
+                <image src="../../images/sign-bg-7.png" mode="scaleToFill" class="shade_7" a:if='{{signInRemain>=3}}' />
+                <image src="../../images/sign-bg-8.png" mode="scaleToFill" class="shade_8" a:if='{{signInRemain>=2}}' />
+                <image src="../../images/sign-bg-9.png" mode="scaleToFill" class="shade_9" a:if='{{signInRemain>=1}}' />
+            </view>
+        </view>
+    </view>
+    <!-- 签到按钮 -->
+    <view class="sign_btn_box">
+        <view class="sign_btn_bg" onTap="signIn" a:if='{{isSignedIn==0}}'>
+            <view class="sign_text"> 签到 </view>
+        </view>
+        <view class="sign_btn_default" a:if='{{isSignedIn==1}}'>
+            <image src="../../images/btn_cannot_exchange_bg.png" />
+            <view class="default_text">已签到</view>
+        </view>
+        <!-- <view class="sign_btn_bg"><view class="sign_text"> 补签/ <image src="../../images/star-icon.png" mode="aspectFit" /><text>200</text></view></view> -->
+    </view>
+</view>
+<!-- 底部tab -->
+<import src="/components/tabBottom/tabBottom.axml"/>
+<template is="tabBottom" data="{{...tabData}}"/>

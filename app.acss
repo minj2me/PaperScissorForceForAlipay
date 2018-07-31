@@ -1,0 +1,19 @@
+
+@font-face{
+  font-family: "gameFont" ;
+  /*src:url("../../utils/font/testFont.ttf");
+  src:url("https://www.lecangclub.cn/api/web/DFPHaiBaoW12-GB.ttf");*/
+  src:url("http://superminigame.cn/guess/static/font/DFPHaiBaoW12-GB.ttf");
+}
+
+page {
+  /* flex: 1;
+  display: flex; 
+    font-family: 'Menlo' 
+   font-family: 'Menlo' 
+   */
+  font-family:"gameFont";
+  font-size:60rpx;
+}
+
+

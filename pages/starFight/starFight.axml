@@ -1,0 +1,135 @@
+<import src="/components/head/head.axml"/>
+
+<view class="main_bg">
+
+
+<!--显示倒计时
+  <view class="timeCountDown" hidden="{{showTaCard?true:false}}">
+  <import src="/components/timeCountDown/timeCountDown.axml"/>
+  <template is="timeCountDown" data="{{countDownTime:countDownTime}}"/>
+</view>-->
+
+<view class="timeCountDown" style="top:{{timeCountDownY}}rpx;left:{{timeCountDownX}}rpx" hidden="{{showResult?true:false}}">
+  <text class="timeCountDownText" a:if={{countDownTime<10}}>选择出牌顺序 00:0{{countDownTime}}</text>
+  <text class="timeCountDownText" a:else>选择出牌顺序 00:{{countDownTime}}</text>
+</view>
+
+<view id="game_view">
+
+    <!--<view class="user">
+    <image class="avatar" src="{{player.avatar}}" background-size="cover"/>
+    <view  class="nickname">{{player.nickName}}</view>
+  </view>-->
+  <template is="user-head" data="{{...player}}"/>
+
+<view>
+<!--<view animation="{{cardAnimationInfo}}"  a:for="{{cardListOrderUser}}" style="display:inline-block">-->
+<view a:for="{{cardListOrderUser}}" style="display:inline-block">
+  <image 
+  style="position:absolute;top:{{item.y==''?0:item.y}}rpx;left:{{item.x==''?0:item.x}}rpx;"
+  class="cardBorder" 
+  src='{{orderPlayerConfirmed?"../../images/card_dot.png":item.poster}}'/>
+ </view>
+</view>
+
+<!--排序中 or 已确认-->
+<image class="confirmTitle" src='../../images/{{orderPlayerConfirmed?"confirmed":"ordering"}}.png'/>
+
+<!--对手开牌的结果-->
+<view class="resultOrderPlayerCardParent">
+<view a:for="{{taSelectedCards}}" style="display:inline-block;" hidden="{{showTaCard?false:true}}">
+  <image 
+  class="resultOrderPlayerCard" src='{{item.url}}'/>
+</view>
+<!--显示gai住的牌-->
+<view a:for="{{hiddenCards}}" animation="{{cardAnimationInfo}}" style="display:inline-block;" hidden="{{(orderPlayerConfirmed && !showTaCard)?false:true}}">
+  <image 
+  class="resultOrderPlayerCard" src='{{item.url}}'/>
+</view>
+</view>
+
+<!--对手开牌的结果-->
+<view hidden="{{orderPlayerConfirmed?true:false}}" a:for="{{borderListOrderUser}}" style="display:inline-block">
+  <image 
+  style="position:absolute;top:{{item.y==''?0:item.y}}rpx;left:{{item.x==''?0:item.x}}rpx;"
+  class="cardBorderBig" src="../../images/border_big.png" data-value="{{item.value}}"/>
+   <!--顺序数字-->
+     <view
+     style="position:absolute;top:{{item.y==''?0:(item.y+8)}}rpx;left:{{item.x==''?0:(item.x+100)}}rpx;"
+    class="indexNumText">{{(item.index+1)}}</view>
+</view>
+
+
+<!--显示双方对战结果-->
+<view style="margin-top:-20rpx;text-align: center;">
+<view a:for="{{resultLists}}" style="display:inline-block">
+    <!--<view hidden="{{showTaCard?false:true}}">-->
+    <view hidden="{{showResult?false:true}}">
+    <image class="result" src='../../images/{{item}}'/>
+  </view>
+  </view>
+
+</view>
+
+<!-- 我的选了牌的放置的位置 -->
+<view>
+<view a:for="{{borderList}}" style="display:inline-block">
+  <image 
+  style="position:absolute;top:{{item.y==''?0:item.y}}rpx;left:{{item.x==''?0:item.x}}rpx;"
+  class="cardBorderBig" src="../../images/border_big.png" data-value="{{item.value}}">
+</image>
+
+ <!--顺序数字-->
+     <view
+     style="position:absolute;top:{{item.y==''?0:(item.y+8)}}rpx;left:{{item.x==''?0:(item.x+100)}}rpx;"
+    class="indexNumText">{{(item.index+1)}}</view>
+      <view
+     style="position:absolute;top:{{item.y==''?0:(item.y+155)}}rpx;left:{{item.x==''?0:(item.x+30)}}rpx;"
+    class="indexText">置入区</view>
+</view>
+</view>
+
+  <view class="userBottom">
+  <template is="user-head" data="{{...me}}"/>
+  </view>
+
+<!--draw the card need to send-->
+<!-- <view class="cardBottom"> -->
+<!--关于setData的优化：https://docs.alipay.com/mini/framework/performance-tips-->
+  <view style="text-align:center">
+  <view a:for="{{cardList}}" key="{{item.index}}" style="display:inline-block">
+    <image 
+    id="card_bg"
+    style="position:absolute;top:{{item.y==''?0:item.oy}}rpx;left:{{item.x==''?0:item.ox}}rpx;"
+    class="cardBorder" src='../../images/card_dot.png'/>
+    <!--可移动的牌-->
+    <image 
+    style="margin-left:10rpx;margin-right:10rpx;position:absolute;top:{{item.touched?item.y-28:item.y}}rpx;left:{{item.put?item.x-2:(item.touched?item.x-28:item.x)}}rpx;width:{{(item.put||item.touched)?148:115}}rpx;height:{{(item.put||item.touched)?205:147}}rpx"
+    id = "{{item.index}}" 
+    onTouchStart="moveStart" 
+    onTouchMove="moveCard" 
+    onTouchEnd="moveEnd"
+     src="{{(item.put||item.touched)?item.posterBig:item.poster}}" data-value="{{item.value}}"/>
+     
+  </view>
+  <image
+  onTap="confirmCard" 
+  class="confirmButton" 
+  src='../../images/{{iSendedCard?"send":"send_before"}}.png'/>
+</view>
+
+
+  <!--放该局的对战记录--> 
+  <view class="resultRecordList">
+  <view  a:for="{{resultRecordLists}}" style="display:inline-block">
+  <text 
+  class="resultRecordText" 
+  style="position:absolute;left:{{item.x}}rpx;">{{item.currentStage}}</text>
+  <image class="resultRecord" src="../../images/{{item.bg}}"/>
+  </view>
+  </view>
+</view>
+</view>
+<view hidden="{{showedGuide?true:false}}">
+<guidance></guidance>
+</view>

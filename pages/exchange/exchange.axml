@@ -1,0 +1,74 @@
+ <!-- 头像节点  -->
+<view class="user_info">
+    <view class="line_box">
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+    </view>
+    <view class="user_box">
+        <view class="user_content">
+            <!-- 头像 -->
+            <view class="user_img">
+                <image src="{{avatar}}" mode="scaleToFill" />
+            </view>
+            <view class="user_name">
+                <view class="name_bg">
+                    <image src="../../images/head-bg-1.png" class="middle_img" mode='scaleToFill' />
+                    <view class="name_text">
+                        <text>{{nickName}}</text>
+                        <image src="../../images/man-icon.png" mode='aspectFit' a:if='{{gender==1 || gender==0}}' />
+                        <image src="../../images/woman-icon.png" mode='aspectFit' a:if='{{gender==2}}' />
+                    </view>
+                </view>
+                <view class="name_bg star_num">
+                    <image src="../../images/star-icon.png" class="star_img" mode='aspectFit' />
+                    <image src="../../images/head-bg-1.png" class="middle_img" mode='aspectFit' />
+                    <view class="name_text">{{stars}}                          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="debris_bg">
+<view class="break_bg"></view>
+      <view class="item" a:for="{{list}}" a:for-item="item"> 
+      <view class="itemBg2">
+      <view class="itemBg">
+      <image class="productPhoto" src="{{item.url}}" mode='aspectFit'/>
+      <view>
+      <image class="starBg" src="../../images/exchange_item_bg.png"/>
+      <text class="starCount">{{item.starsRequired}}</text>
+      <image class="smallStarImg" src="../../images/star-icon.png"/>
+      </view>
+      <view class="priceItemOut"> 
+      <view class="priceItem">
+      <!--<image class="priceBg" src="../../images/price_bg.png"/>-->
+      {{item.price}}
+      </view>
+      </view>
+
+      <text class="nameText">{{item.name}}<text>
+      
+      </view>
+      <view class="btnExchangeBg" onTap="prizeExchange" data-value="{{item}}">
+      <image 
+      class="btnExchangeImg" 
+      src='../../images/{{item.userLimited==0?"btn_can_exchange_bg":(item.userOwnCount<item.userLimited)?"btn_can_exchange_bg":"btn_cannot_exchange_bg"}}.png'/>
+      <view class="exchangeText" a:if="{{item.userLimited==0}}">
+      兑换
+      </view>
+      <view class="exchangeText" a:elif="{{item.userOwnCount>item.userLimited}}">
+      已兑换
+      </view>
+       <view class="exchangeText" a:else="{{item.userOwnCount<item.userLimited}}">
+      兑换
+      </view>
+      </view>
+      <!--<text class="itemText">{{item.nickName}}</text>
+      <image class="sexImg" src='../../images/{{item.gender==0?"man-icon":"woman-icon"}}.png'/>
+      <image class="starImg" src="../../images/star-icon.png"/>
+      <text class="itemPoint">{{item.stars}}</text>-->
+      </view>
+  </view>
+      </view>

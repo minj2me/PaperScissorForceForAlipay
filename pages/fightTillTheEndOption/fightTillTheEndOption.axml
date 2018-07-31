@@ -1,0 +1,21 @@
+<import src="/components/head/head.axml"/>
+
+<view class="fixd_bg">
+<template is="user-head" data="{{...player}}"/>
+<!-- <view class="centerView">
+  <view class="play_box">
+    <button class="play_btn_bg_three_card" id="2" onTap="getShareData" open-type="share" />  
+  </view>
+  </view> -->
+  <image src="../../images/bg-icon-1.png" mode="scaleToFill" class="bg_icon" />
+  <view class="centerView">
+  <view class="play_box_2">
+  <button class="play_btn_bg_one_card" id="1" onTap="getShareData" open-type="share" />
+  </view>
+  </view>
+   <image src="../../images/bg-icon-2.png" mode="scaleToFill" class="bg_icon_two" />
+    <image src="../../images/bg-icon-3.png" mode="scaleToFill" class="bg_icon_three" />
+  <!-- <view class="advertising_space" onTap="playTurntable">  我是广告位</view> -->
+</view>
+
+

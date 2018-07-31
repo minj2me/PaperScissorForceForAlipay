@@ -1,0 +1,395 @@
+@import '../../components/tabBottom/tabBottom.acss';
+
+page{
+    height:auto;
+    padding-top:90rpx;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #ff7190 , #f95d77);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* 头像样式 */
+.user_info{
+    position: relative;
+    height: 142rpx;
+    line-height: 142rpx;
+    width: 100%;
+}
+.user_info .line_box{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+.user_info .line_item{
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+    margin-bottom: 10rpx;
+}
+.user_info .line_item:last-child{
+    margin-bottom: 0;
+}
+.info_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.share_btn{
+    width: 120rpx;
+    height: 120rpx;
+    position: relative;
+    margin-left: 90rpx;
+}
+.share_btn > image{
+    width: 100%;
+    height: 100%;
+}
+.share_text{
+    position: absolute;
+    font-size: 28rpx;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 56rpx;
+    height: 56rpx;
+    line-height: 28rpx;
+}
+.share_text .play_btn_bg{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    line-height: 28rpx;
+    font-size: 28rpx;
+    white-space: normal;
+}
+.user_info .user_box{
+    width: 420rpx;
+    height: 132rpx;
+    border-radius: 30px;
+    text-align: center;
+    color: #F57259;
+    background: linear-gradient(to right, #ff97ff,blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    z-index: 9;
+}
+.flex_box{
+    display: flex;
+    align-items: center; 
+    width: 550rpx;
+    height: 120rpx;
+}
+.user_info .user_box .user_content {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to right, #FA2D60, #EFCF5B); */
+   background: linear-gradient(to right, #ff7190,#ffd252);
+    /* content: ''; */
+    /* z-index: -1; */
+    border-radius: 20%;
+    /* display: flex;
+    align-items: center; */
+    border-radius: 30px;
+  }
+.user_img{
+    width: 142rpx;
+    height: 142rpx;
+    border-radius: 50%;
+    background: linear-gradient(to right, #bce2ea,#7762ef);
+    transform: translate(-20%,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rpx;
+    box-sizing: border-box;
+}
+.user_img image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.user_name {
+    width: 50%;
+    /* transform: translate(-56rpx,0); */
+    margin-left:-10rpx; 
+  }
+.user_name image{
+  width:27rpx;
+  height: 37rpx;
+}
+.user_name .name_bg{
+  width: 190rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: relative;
+  /* margin-top: 5rpx; */
+}
+.name_bg .middle_img{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.name_bg .name_text{
+  color: #383838;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50% ,0);
+  font-size:25rpx; 
+  width: 80%;
+  align-items: center;
+  display: flex;
+  height: 60rpx;
+}
+.name_bg:last-child .name_text{
+    height: 0.46rem;
+}
+.name_text image{
+  width: 25rpx;
+  height: 25rpx;
+  vertical-align: initial;
+  margin-left: 10rpx;
+}
+.name_text text{
+  display: inline-block;
+  width: 100rpx;
+  height: 60rpx;
+  overflow: hidden;
+}
+.user_name .star_num{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+   /* margin-top: 3rpx; */
+   margin-left: 18rpx;
+}
+.user_name .star_num .middle_img{
+  left: 50rpx;
+}
+.user_name .star_num .name_text{
+  margin-left: 50rpx;
+}
+.user_name .star_img{
+  position: absolute;
+  width: 35rpx;
+  height: 37rpx;
+  left: 10rpx;
+  top: 5rpx;
+}
+.sign_num{
+     width: 142rpx;
+    height: 142rpx;
+    border-radius: 50%;
+    padding: 10rpx;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #bce2ea,#7762ef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -80rpx;
+  }
+.sign_num .sign_num_bg{
+    background-color: rgb(255, 210, 81);
+     width:100%;
+    height: 100%;
+    border-radius: 50%;
+     text-align: center;
+     color: #fff;
+     font-size: 32rpx;
+     padding-top: 15rpx;
+     box-sizing: border-box;
+     position: relative;
+}
+.sign_num .sign_num_bg >image{
+    width: 70%;
+    height:70%;
+    margin: 0 auto;
+}
+.num_text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Microsoft YaHei';
+    font-weight: bold;
+}
+/* 排行 */
+.item{
+    height:180rpx;
+    padding:0 15rpx 0 15rpx ;
+    position: relative;
+}
+.ranking_name{
+    background-color: #fff;
+    border-radius: 30px;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 32rpx;
+    padding: 0 12rpx;
+    box-shadow: 1px 1px 1px  #000000,-1px -1px 1px  #000000;
+    width: 150rpx;
+    margin: 0 20rpx;
+}
+.stars{
+    margin: 0;
+    width: 1.12rem;
+    margin-left: 0.1rem;
+    text-align: center;
+}
+.itemText{
+   display: inline-block;
+   width: 110rpx;
+   height: 38rpx;
+   overflow: hidden;
+   text-align: center;
+}
+.ranking_name >image{
+    margin-left: 5rpx;
+    vertical-align: middle;
+}
+.bottomLine{
+    background:#dddddd;
+    width: 75%;
+    height: 2px;
+    margin-top: 0.2rem;
+    margin-left: 1.4rem;
+}
+
+.itemPoint{
+      font-size:35rpx;
+   
+}
+
+.profileImgBg{
+    border-radius: 50%;
+    background: linear-gradient(to right, #bce2ea,#7762ef);
+    width:150rpx;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -30rpx;
+    padding: 10rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.profileImg{
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.ranking_item{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80rpx;
+    height: 80rpx;
+}
+.ranking_item >image{
+    width: 100%;
+    height: 100%;
+}
+.ranking_item_text{
+    color: #fff;
+    font-family:  'Microsoft YaHei';
+    font-size: 36rpx;
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    left:0;
+    top:0;
+    line-height: 80rpx;
+    font-weight: bold;
+    text-align: center;
+
+}
+.starImg{
+    width:72rpx;
+    height:72rpx;
+}
+
+.sexImg{
+    width:24rpx;
+    height:29rpx;
+}
+
+.itemBg{
+    -webkit-flex: none;
+    flex: none;
+    width:100%;
+    border-radius:40px;
+    height:110rpx;
+   background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#FFD252), to(#FF7E2E));
+   display: flex;
+   align-items: center;
+}
+
+.itemBg2{
+      /*itemBg2的子布局居中布局,使用*/
+      padding:5rpx 12rpx 5rpx 5rpx ;
+      /*上内边距是 10px
+右内边距是 10px
+下内边距是 10px
+左内边距是 10px*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:40px;
+    height:125rpx;
+   background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#cc59ef), to(#3940ef));
+   width: 90%;
+    margin: 0 auto;
+}
+.scroll{
+    background-color: #ffffff;
+    border-radius:12px;
+     -moz-box-shadow: 2px 2px 2px #000000;
+    -webkit-box-shadow: 2px 2px 2px #000000;
+    box-shadow: 2px 2px 2px #000000;
+    margin-bottom:20rpx;
+    width:90%;
+    margin:auto;
+    margin-top:60rpx;
+    height: 800rpx;
+    z-index: 9;
+}
+.list_bg{
+   padding-top:30rpx; 
+    overflow: hidden;
+}
+
+.userTop {
+    text-align: center;
+    width:100%;
+   position: absolute; /*or前面的是absolute就可以用*/  
+       top:30rpx;  
+  display: flex;
+}
+
+.user_box_ .user_box{
+     width: 600rpx;
+    height: 150rpx;
+}
+
+tips1{
+   height: 60px;
+
+}
+.ranking_tips{
+    text-align: center;
+    font-size: 36rpx;
+    color: #f9586e;
+    margin-bottom: 20rpx;
+}

@@ -1,0 +1,47 @@
+<view class="fixd_bg">
+  <view class="user_info">
+    <view class="line_box">
+      <view class="line_item"></view>
+      <view class="line_item"></view>
+      <view class="line_item"></view>
+    </view>
+    <view class="user_box">
+      <view class="user_content">
+        <!-- 头像 -->
+        <view class="user_img">
+          <image src="{{avatar}}" mode="scaleToFill" />
+        </view>
+        <view class="user_name">
+          <view class="name_bg">
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='scaleToFill' />
+            <view class="name_text">
+              <text>{{nickName}}</text>
+              <image src="../../images/man-icon.png" mdoe='aspectFit' a:if='{{gender==1 ||gender==0}}' />
+              <image src="../../images/woman-icon.png" mdoe='aspectFit' a:if='{{gender==2}}' />
+            </view>
+          </view>
+          <view class="name_bg star_num">
+            <image src="../../images/star-icon.png" class="star_img" mdoe='aspectFit' />
+            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='aspectFit' />
+            <view class="name_text">{{stars}}</view>
+          </view>
+        </view>
+        <!-- <view class="user_btn"><image src="../../images/exchange-btn.png" mode="scaleToFill" onTap="skipExchange" /><image src="../../images/sign-btn.png" mode="scaleToFill" onTap="skipSign" /></view> -->
+      </view>
+    </view>
+  </view>
+  <view class="play_box">
+    <image src="../../images/play-1.png" mode="scaleToFill" class="play_btn" onTap="gameMatching" />
+    <image src="../../images/bg-icon-1.png" mode="scaleToFill" class="bg_icon" />
+  </view>
+  <view class="play_box">
+    <image src="../../images/play-2.png" mode="scaleToFill" class="play_btn" onTap="playGame" />
+    <image src="../../images/bg-icon-2.png" mode="scaleToFill" class="bg_icon_two" />
+    <image src="../../images/bg-icon-3.png" mode="scaleToFill" class="bg_icon_three" />
+  </view>
+  <view class="tips">Tips：每一种牌，总和只有4张</view>
+  <!-- <view class="advertising_space" onTap="playTurntable">  我是广告位</view> -->
+  <!-- 底部tab -->  
+  <import src="/components/tabBottom/tabBottom.axml"/>
+  <template is="tabBottom" data='{{...tabData}}'/>
+</view>

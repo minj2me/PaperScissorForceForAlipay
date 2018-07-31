@@ -1,0 +1,16 @@
+<template name="tabBottom">
+  <view class="tab_box {{isIphoneX?'Iphone_x':''}}">
+    <view class="tab_item" onTap="tabCutOne" >
+      <image src="../../images/exchange.png" mode="scaleToFill" />
+    </view>
+    <view class="tab_item" onTap="tabCutTwo">
+      <image src="../../images/sign.png" mode="scaleToFill" />
+    </view>
+    <view class="tab_item" onTap="tabCutThree">
+      <image src="../../images/ranking.png" mode="scaleToFill" />
+    </view>
+    <view class="tab_item" onTap="tabCutFour">
+      <image src="../../images/personal.png" mode="scaleToFill" />
+    </view>
+  </view>
+</template>

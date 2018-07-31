@@ -1,0 +1,82 @@
+<!-- <image src="../../images/ranking-main.jpg" mode="widthFix" /><import src="/components/tabBottom/tabBottom.axml"/><template is="tabBottom" data="{{...item}}"/>-->
+<!-- 头像节点  -->
+<view class="user_info">
+    <view class="line_box">
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+        <view class="line_item"></view>
+    </view>
+    <view class="info_box">
+        <view class="user_box">
+            <view class="user_content">
+                <view class="flex_box">
+                    <!-- 头像 -->
+                    <view class="user_img">
+                        <image src="{{imPlayer.avatar}}" mode="scaleToFill" />
+                    </view>
+                    <view class="user_name">
+                        <view class="name_bg">
+                            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='scaleToFill' />
+                            <view class="name_text">
+                                <text>{{imPlayer.nickName}}</text>
+                                <image src="../../images/man-icon.png" mdoe='aspectFit' a:if='{{imPlayer.gender==1 ||imPlayer.gender==0}}' />
+                                <image src="../../images/woman-icon.png" mdoe='aspectFit' a:if='{{imPlayer.gender==2}}' />
+                            </view>
+                        </view>
+                        <view class="name_bg star_num">
+                            <image src="../../images/star-icon.png" class="star_img" mdoe='aspectFit' />
+                            <image src="../../images/head-bg-1.png" class="middle_img" mdoe='aspectFit' />
+                            <view class="name_text">{{imPlayer.stars}}                          </view>
+                        </view>
+                    </view>
+                    <view class="sign_num">
+                        <view class="sign_num_bg">
+                            <image src="../../images/ranking-star-1.png" mode="aspectFit" />
+                            <view class="num_text">{{imPlayer.ranking}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="share_btn">
+            <image src="../../images/btn-bg-2.png" />
+            <view class="share_text">
+                <button class="play_btn_bg" open-type="share" plain='true' type="default">分享战绩</button>
+            </view>
+        </view>
+    </view>
+</view>
+<!--<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>  -->
+<scroll-view scroll-y="true" class="scroll">
+    <view class="list_bg">
+        <!--<scroll-view scroll-y="{{true}}" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">-->
+        <view class="item" a:for="{{list}}" a:for-item="item">
+            <view class="itemBg2">
+                <view class="itemBg">
+                    <view class="profileImgBg">
+                        <image class="profileImg" src="{{item.avatar}}"/>
+                        <view class="ranking_item">
+                            <image src="../../images/ranking-star-1.png" mode="aspectFit" />
+                            <view class="ranking_item_text">{{index+1}}</view>
+                        </view>
+                    </view>  
+                    <view class="ranking_name">
+                        <text class="itemText">{{item.nickName}}</text>
+                        <image class="sexImg" src='../../images/{{item.gender==2?"woman-icon":"man-icon"}}.png'/>
+                    </view>
+                    <image class="starImg" src="../../images/star-icon.png"/>
+                    <view class="ranking_name stars">
+                        <text class="itemPoint">{{item.stars}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="bottomLine"/></view>
+        </view>
+        <view a:if='{{list.length>0}}' class="ranking_tips">Tips：排行版只显示前20名</view>
+    </view>
+</scroll-view>
+<!-- 底部tab -->
+<import src="/components/tabBottom/tabBottom.axml"/>
+<template is="tabBottom" data="{{...tabData}}"/>

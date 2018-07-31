@@ -1,0 +1,39 @@
+@import "/components/head/head.acss";
+
+page{
+  background-color: #ff7190;
+  position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+}
+
+
+.userTop {
+    text-align: center;
+    width:100%;
+   position: absolute; /*or前面的是absolute就可以用*/  
+       top: 40rpx;  
+  display: flex;
+}
+
+.centerTitle{
+  width: 400rpx;
+  position: absolute;
+  left: 50%;/*配合margin-left的负值实现水平居中*/ 
+  margin-left: -200rpx;/*值的大小等于元素宽度的一半*/
+  top:25%;/*配合margin-top的负值实现垂直居中*/ 
+}
+
+.userBottom {
+    text-align: center;
+    
+    width:100%;
+   position: absolute; /*or前面的是absolute就可以用*/  
+       bottom: 40rpx;  
+  display: flex;
+
+  /* position: absolute; */
+  /* margin-top: 600rpx; */
+  /* padding: 10px 5px 10px 0px; */
+}

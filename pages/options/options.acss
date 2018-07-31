@@ -1,0 +1,218 @@
+@import '../../components/tabBottom/tabBottom.acss';
+page{
+  /* background-color: #ff7190; */
+ 
+ 
+}
+.fixd_bg{
+   padding-top: 121rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ff7190 , #f95d77);
+}
+.user_info{
+    position: relative;
+    height: 142rpx;
+    line-height: 142rpx;
+    width: 100%;
+}
+.user_info .line_box{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+.user_info .line_item{
+    height: 8rpx;
+    width:100%;
+    background: linear-gradient(to right, #edeb4f , #83dde5);
+    margin-bottom: 10rpx;
+}
+.user_info .line_item:last-child{
+    margin-bottom: 0;
+}
+.user_info .user_box{
+   position: relative;
+    width: 420rpx;
+    height: 142rpx;
+    border-radius: 30px;
+    background-clip: padding-box;
+    text-align: center;
+    color: #F57259;
+    margin: 0 auto;
+    background: linear-gradient(to right, #ff97ff,blue);
+}
+.user_info .user_box .user_content {
+    position: absolute;
+    width: 410rpx;
+    height: 132rpx;
+    top: 5rpx; bottom: 5rpx;
+    left: 5rpx; right: 5rpx;
+    /* background: linear-gradient(to right, #FA2D60, #EFCF5B); */
+   background: linear-gradient(to right, #ff7190,#ffd252);
+    /* content: ''; */
+    /* z-index: -1; */
+    border-radius: 20%;
+    display: flex;
+    border-radius: 30px;
+  }
+.user_img{
+    width: 142rpx;
+    height: 142rpx;
+    border-radius: 50%;
+    background: linear-gradient(to right, #bce2ea,#7762ef);
+    transform: translate(-20%,0);
+    margin-top: -3rpx;
+}
+.user_img image{
+    margin-top: 12rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+.user_name {
+    width: 50%;
+    /* transform: translate(-56rpx,0); */
+  }
+.user_name image{
+  width:27rpx;
+  height: 37rpx;
+}
+.user_name .name_bg{
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  position: relative;
+  margin-top: 5rpx;
+}
+.name_bg .middle_img{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.name_bg .name_text{
+  color: #383838;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50% ,0);
+  font-size:25rpx; 
+  width: 80%;
+  align-items: center;
+  display: flex;
+  height: 60rpx;
+}
+.name_text image{
+  width: 25rpx;
+  height: 25rpx;
+  vertical-align: initial;
+  margin-left: 10rpx;
+}
+.name_text text{
+  display: inline-block;
+  width: 100rpx;
+  height: 60rpx;
+  overflow: hidden;
+}
+.user_name .star_num{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+   margin-top: 3rpx;
+   margin-left: 25rpx;
+}
+.user_name .star_num .middle_img{
+  left: 50rpx;
+}
+.user_name .star_num .name_text{
+  margin-left: 50rpx;
+}
+.user_name .star_img{
+  position: absolute;
+  width: 35rpx;
+  height: 37rpx;
+  left: 10rpx;
+  top: 10rpx;
+}
+/* .user_btn{
+    width: 132rpx;
+    transform: translate(30%,0);
+    line-height: 0;
+    margin-top: -10rpx;
+  }
+.user_btn image{
+  width: 122rpx;
+  height: 78rpx;
+} */
+
+
+
+
+/* 按钮样式 */
+.play_box{
+  position: relative;
+  margin-top: 40rpx;
+  text-align: center;
+}
+.play_box :last-child{
+  margin-top: 40rpx;
+}
+.play_btn{
+  width: 280rpx;
+  height: 280rpx;
+}
+.bg_icon{
+  width: 202rpx;
+  height: 84rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.bg_icon_two{
+  width: 152rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: -40rpx;
+}
+.bg_icon_three{
+  width: 153rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom: -40rpx;
+}
+.advertising_space{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  background-color: #fff;
+}
+.tips{
+  margin-top: 50rpx;
+  color:#fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

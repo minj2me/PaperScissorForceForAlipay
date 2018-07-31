@@ -1,0 +1,37 @@
+<!-- 底部tab -->
+  <import src="/components/head/head.axml"/>
+  <template is="user-head" data="{{...sUserInfo}}"/>
+<view class="title_box">
+<image src="../../images/award-title.png" mode="scaleToFill" class="title_img" />
+  
+</view>
+<view class="gb-wheel-container" id="gbWheel">
+  <view class="gb-wheel-content gb-wheel-run" style="z-index: 3">
+    <view class="gb-wheel-line">
+      <view class="gb-wheel-litem" a:for='{{awards}}' style="transform : rotate({{index* turnNum + turnNum / 2 +180}}deg)"></view>
+    </view>
+    <view class="gb-wheel-list">
+      <view class=" select_bg" a:if='{{showSelect}}'  style="transform: rotate({{1440 - 360 / len * (len-(selectIdx-1))-turnNum/2}}deg) skewY({{turnNum-90}}deg)">
+      </view>
+      <view class="gb-wheel-item" a:for='{{awards}}' style="transform: rotate({{index * turnNum}}deg)" >
+        <!-- <view class="gb-wheel-icontent">{{item.name }}</view> -->
+        <view class="gb-wheel-icontent gb-wheel-content-img">
+          <!-- 商品图片 -->
+          <image src="{{item.url}}" mode='aspectFit'/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 第二层 -->
+  <view class="gb-wheel-content gb-wheel-run wai2" style="z-index: 2">
+    <view class="gb-wheel-list">
+      <view class="gb-wheel-item" a:for='{{awards}}'  style="transform: rotate({{index * turnNum}}deg)">
+        <view class="gb-wheel-icontent" >{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="gb-wheel-btn" onTap='startRollTap' animation="{{aniData}}">
+    <image src="../../images/pointer.png" mode="scaleToFill" />
+    GO</view>
+  </view>
+  <view onTap="skipResult" a:if='{{resultBtn}}' class="result_btn">领取</view>
